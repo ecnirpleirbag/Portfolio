@@ -1,27 +1,3 @@
-// Theme toggle
-const themeToggle = document.getElementById('theme-toggle');
-const body = document.body;
-
-function setTheme(dark) {
-  if (dark) {
-    body.classList.add('dark');
-    themeToggle.textContent = '☀️';
-    localStorage.setItem('theme', 'dark');
-  } else {
-    body.classList.remove('dark');
-    themeToggle.textContent = '🌙';
-    localStorage.setItem('theme', 'light');
-  }
-}
-
-// Load theme from localStorage
-const savedTheme = localStorage.getItem('theme');
-setTheme(savedTheme === 'dark');
-
-themeToggle.addEventListener('click', () => {
-  setTheme(!body.classList.contains('dark'));
-});
-
 // Smooth scroll for nav links
 const navLinks = document.querySelectorAll('.nav-links a');
 navLinks.forEach(link => {
@@ -59,7 +35,6 @@ window.addEventListener('click', e => {
 
 // Dynamic background gradient based on time of day
 function setTimeGradient() {
-  if (body.classList.contains('dark')) return; // Don't override dark mode
   const hour = new Date().getHours();
   let gradient = '';
   let textColor = '#2c3e50';
@@ -84,8 +59,8 @@ function setTimeGradient() {
     gradient = 'linear-gradient(135deg, #232526 0%, #414345 100%)';
     textColor = '#ecf0f1';
   }
-  body.style.background = gradient;
-  body.style.color = textColor;
+  document.body.style.background = gradient;
+  document.body.style.color = textColor;
   // Also update nav, hero, and footer backgrounds for contrast
   document.querySelectorAll('.hero, footer').forEach(el => {
     el.style.background = 'transparent';
