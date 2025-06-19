@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gabriel Prince | Portfolio</title>
+  <link rel="stylesheet" href="assets/CSS/main.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <nav class="navbar">
+    <div class="nav-logo">Gabriel Prince</div>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#resume">Resume</a></li>
+      <li><a href="#contact">Contact</a></li>
+      <li><button id="theme-toggle" aria-label="Toggle dark/light mode">🌙</button></li>
+    </ul>
+  </nav>
+
+  <header class="hero">
+    <h1>Gabriel Prince</h1>
+    <p>Explorer | Student | Developer</p>
+    <div class="social-links">
+      <a href="https://github.com/" target="_blank" aria-label="GitHub"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub" class="icon"></a>
+      <a href="https://linkedin.com/" target="_blank" aria-label="LinkedIn"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-original.svg" alt="LinkedIn" class="icon"></a>
+    </div>
+  </header>
+
+  <main>
+    <section id="about">
+      <h2>About Me</h2>
+      <div class="about-content">
+        <!-- Optionally add a profile image here -->
+        <p>Hi, I'm Gabriel Prince D, a passionate and curious Master's student in Computer Science & Engineering. I specialize in software development, machine learning, and AI-driven systems. With a background in full-stack development using Flutter, Dart, Firebase, and web technologies, I've built and contributed to several real-world projects—from mobile apps to intelligent multimedia processing systems.<br><br>
+        Currently, I'm diving deeper into research and development in areas like AI-powered summarization, knowledge extraction, and IoT-based health monitoring, aiming to build systems that are not only innovative but impactful. I'm always eager to collaborate, explore emerging technologies, and grow as a developer and researcher.<br><br>
+        When I'm not coding, you'll find me experimenting with game design, exploring the latest in AI security, or fine-tuning embedded systems with Raspberry Pi and ESP32.<br><br>
+        Let's build something meaningful together.</p>
+      </div>
+    </section>
+
+    <section id="projects">
+      <h2>Projects</h2>
+      <div class="project-gallery">
+        <div class="project-card" data-modal="modal1">
+          <h3>Personalized Video Summarization & Notes Generation</h3>
+          <p>AI-based system for segmenting educational videos, transcribing speech, and generating structured notes with diagrams.</p>
+          <button class="view-details">View Details</button>
+        </div>
+        <div class="project-card" data-modal="modal2">
+          <h3>IoT-Based Vital Sign Monitoring System</h3>
+          <p>Health monitoring system using ESP32 and sensors for real-time tracking and edge data processing.</p>
+          <button class="view-details">View Details</button>
+        </div>
+      </div>
+      <!-- Modals for project details -->
+      <div class="modal" id="modal1">
+        <div class="modal-content">
+          <span class="close">&times;</span>
+          <h3>Personalized Video Summarization & Notes Generation</h3>
+          <p>Developed an AI-based system that segments educational videos, detects slide transitions, transcribes speech using Whisper, and generates structured notes with relevant diagrams using NLP techniques like BART and Word Mover's Distance. Supports keyword-based summarization and PDF export.</p>
+          <a href="#" target="_blank">View on GitHub</a>
+        </div>
+      </div>
+      <div class="modal" id="modal2">
+        <div class="modal-content">
+          <span class="close">&times;</span>
+          <h3>IoT-Based Vital Sign Monitoring System</h3>
+          <p>Built a health monitoring system using ESP32 and sensors to measure heart rate, body temperature, and blood pressure via Pulse Transit Time (PTT). Designed for real-time tracking with future integration to Raspberry Pi for edge data processing and visualization.</p>
+          <a href="#" target="_blank">View on GitHub</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills">
+      <h2>Skills</h2>
+      <ul class="skills-list">
+        <li>Python</li>
+        <li>C++</li>
+        <li>MySQL</li>
+        <li>Git</li>
+        <li>HTML</li>
+        <li>CSS</li>
+        <li>Machine Learning</li>
+        <li>AI tools</li>
+      </ul>
+    </section>
+
+    <section id="resume">
+      <h2>Resume</h2>
+      <a href="#" class="resume-btn" download>Download Resume (PDF)</a>
+      <p class="resume-note">(Upload your resume PDF and update this link!)</p>
+    </section>
+
+    <section id="contact">
+      <h2>Contact</h2>
+      <form id="contact-form" novalidate>
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name" required>
+        </div>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" required>
+        </div>
+        <div class="form-group">
+          <label for="message">Message</label>
+          <textarea id="message" name="message" rows="4" required></textarea>
+        </div>
+        <button type="submit">Send Message</button>
+        <p id="form-status"></p>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    &copy; 2025 Gabriel Prince — All rights reserved.
+  </footer>
+
+  <script src="assets/main.js"></script>
+</body>
+</html>
