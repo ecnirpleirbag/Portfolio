@@ -57,28 +57,40 @@ window.addEventListener('click', e => {
   });
 });
 
-// Contact form validation
-const form = document.getElementById('contact-form');
-const status = document.getElementById('form-status');
-if (form) {
-  form.addEventListener('submit', function(e) {
-    e.preventDefault();
-    // Simple validation
-    const name = form.name.value.trim();
-    const email = form.email.value.trim();
-    const message = form.message.value.trim();
-    if (!name || !email || !message) {
-      status.textContent = 'Please fill in all fields.';
-      status.style.color = 'red';
-      return;
-    }
-    if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)) {
-      status.textContent = 'Please enter a valid email address.';
-      status.style.color = 'red';
-      return;
-    }
-    status.textContent = 'Thank you! Your message cannot be sent (static site), but the form is working.';
-    status.style.color = 'green';
-    form.reset();
+// Dynamic background gradient based on time of day
+function setTimeGradient() {
+  if (body.classList.contains('dark')) return; // Don't override dark mode
+  const hour = new Date().getHours();
+  let gradient = '';
+  let textColor = '#2c3e50';
+  if (hour >= 5 && hour < 8) {
+    // Early morning: soft blue/pink
+    gradient = 'linear-gradient(135deg, #f8fafc 0%, #e0c3fc 100%)';
+    textColor = '#2c3e50';
+  } else if (hour >= 8 && hour < 11) {
+    // Morning: light blue/yellow
+    gradient = 'linear-gradient(135deg, #e0eafc 0%, #fff6b7 100%)';
+    textColor = '#2c3e50';
+  } else if (hour >= 11 && hour < 16) {
+    // Afternoon: bright blue/white
+    gradient = 'linear-gradient(135deg, #a1c4fd 0%, #c2e9fb 100%)';
+    textColor = '#2c3e50';
+  } else if (hour >= 16 && hour < 19) {
+    // Evening: orange/purple
+    gradient = 'linear-gradient(135deg, #fbc2eb 0%, #fcb69f 100%)';
+    textColor = '#2c3e50';
+  } else {
+    // Night: dark blue/indigo
+    gradient = 'linear-gradient(135deg, #232526 0%, #414345 100%)';
+    textColor = '#ecf0f1';
+  }
+  body.style.background = gradient;
+  body.style.color = textColor;
+  // Also update nav, hero, and footer backgrounds for contrast
+  document.querySelectorAll('.hero, footer').forEach(el => {
+    el.style.background = 'transparent';
+    el.style.color = textColor;
   });
-} 
+}
+setTimeGradient();
+setInterval(setTimeGradient, 60 * 60 * 1000); // Update every hour 
