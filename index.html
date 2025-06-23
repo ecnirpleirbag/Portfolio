@@ -9,18 +9,24 @@
 </head>
 <body>
   <nav class="navbar">
-    <div class="nav-logo">Gabriel Prince</div>
+    <a href="index.html" class="nav-logo">Gabriel Prince</a>
     <ul class="nav-links">
       <li><a href="#about">About</a></li>
       <li><a href="#projects">Projects</a></li>
       <li><a href="#skills">Skills</a></li>
       <li><a href="#resume">Resume</a></li>
+      <li><a href="blog.html">Blog</a></li>
     </ul>
   </nav>
 
   <header class="hero">
     <h1>Gabriel Prince</h1>
-    <p>Explorer | Student | Developer</p>
+    <div class="daynight-icon" tabindex="0"><span class="daynight-tooltip"></span></div>
+    <div class="hero-subheading">
+      <span tabindex="0">Explorer</span> |
+      <span tabindex="0">Student</span> |
+      <span tabindex="0">Developer</span>
+    </div>
     <div class="social-links">
       <a href="https://github.com/ecnirpleirbag" target="_blank" aria-label="GitHub"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub" class="icon"></a>
       <a href="https://www.linkedin.com/in/gabriel-prince-236303203/" target="_blank" aria-label="LinkedIn"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-original.svg" alt="LinkedIn" class="icon"></a>
@@ -41,16 +47,18 @@
 
     <section id="projects">
       <h2>Projects</h2>
-      <div class="project-gallery">
-        <div class="project-card" data-modal="modal1">
-          <h3>Personalized Video Summarization & Notes Generation</h3>
-          <p>AI-based system for segmenting educational videos, transcribing speech, and generating structured notes with diagrams.</p>
-          <button class="view-details">View Details</button>
-        </div>
-        <div class="project-card" data-modal="modal2">
-          <h3>IoT-Based Vital Sign Monitoring System</h3>
-          <p>Health monitoring system using ESP32 and sensors for real-time tracking and edge data processing.</p>
-          <button class="view-details">View Details</button>
+      <div class="marquee-wrapper">
+        <div class="project-gallery">
+          <div class="project-card" data-modal="modal1">
+            <h3>Personalized Video Summarization & Notes Generation</h3>
+            <p>AI-based system for segmenting educational videos, transcribing speech, and generating structured notes with diagrams.</p>
+            <button class="view-details">View Details</button>
+          </div>
+          <div class="project-card" data-modal="modal2">
+            <h3>IoT-Based Vital Sign Monitoring System</h3>
+            <p>Health monitoring system using ESP32 and sensors for real-time tracking and edge data processing.</p>
+            <button class="view-details">View Details</button>
+          </div>
         </div>
       </div>
       <!-- Modals for project details -->
@@ -74,22 +82,29 @@
 
     <section id="skills">
       <h2>Skills</h2>
-      <ul class="skills-list">
-        <li>Python</li>
-        <li>C++</li>
-        <li>MySQL</li>
-        <li>Git</li>
-        <li>HTML</li>
-        <li>CSS</li>
-        <li>Machine Learning</li>
-        <li>AI tools</li>
-      </ul>
+      <div class="marquee-wrapper">
+        <ul class="skills-list">
+          <li>Python</li>
+          <li>C++</li>
+          <li>MySQL</li>
+          <li>Git</li>
+          <li>HTML</li>
+          <li>CSS</li>
+          <li>Machine Learning</li>
+          <li>AI tools</li>
+        </ul>
+      </div>
     </section>
 
     <section id="resume">
       <h2>Resume</h2>
       <a href="assets/GabrielPrinceResume.pdf" class="resume-btn" download>Download Resume (PDF)</a>
-      <p class="resume-note">(Upload your resume PDF and update this link!)</p>
+      <a href="assets/GabrielPrinceResume.zip" class="resume-btn" style="margin-left:0.7em;" download>Download LaTeX Source (ZIP)</a>
+      <p class="resume-note">(Check my resume and edit your resume with this latex!)</p>
+      <iframe src="assets/GabrielPrinceResume.pdf" width="100%" height="600px" style="border: none; margin-top: 1em; border-radius: 8px; box-shadow: 0 2px 12px rgba(0,0,0,0.07); background: #fff;">
+        This browser does not support PDFs. Please download the PDF to view it: 
+        <a href="assets/GabrielPrinceResume.pdf">Download PDF</a>
+      </iframe>
     </section>
   </main>
 
